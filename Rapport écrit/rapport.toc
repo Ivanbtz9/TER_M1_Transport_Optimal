@@ -1,0 +1,27 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {I}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {II}Formulation du probl\`eme}{2}{section.2}%
+\contentsline {subsection}{\numberline {1 }Mod\'elisation du probl\`eme par Monge}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {a }Probl\`eme dans le cas discret}{2}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {b }Transport optimal pour un co\^ut optimal}{3}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2 }Assouplissement des contraintes, probl\`eme de Monge-Kantorovich}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {a }Une approche probabiliste du transport optimal}{5}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {b }Noyaux et couplages}{6}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {III}Dualit\'e de Kantorovich et distance de Wassertein}{12}{section.3}%
+\contentsline {subsection}{\numberline {1 }Existence d'un couplage optimal pour une fonction de co\^ut sci.}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {2 }Dualit\'e de Kantorovich}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3 }Distance de Wasserstein}{15}{subsection.3.3}%
+\contentsline {section}{\numberline {IV}Algorithme Hongrois}{17}{section.4}%
+\contentsline {subsection}{\numberline {1 }Probl\`eme}{17}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {a }Probl\`eme discret}{17}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {b }Linear Sum Assignment Problem (LSAP)}{17}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {2 }Pr\'esentation de l'algorithme Hongrois}{18}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {a }Vue d'ensemble du fonctionnement de l'algorithme.}{18}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {b }Exemple}{18}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {3 }Application \`a un probl\`eme dans le plan}{20}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {a }Probl\`eme}{20}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {b }M\'ethode de R\'esolution : Approche par graphe}{22}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {c }M\'ethode de R\'esolution : Autre version de l'algorithme Hongrois}{24}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {V}Applications}{27}{section.5}%
+\contentsline {subsection}{\numberline {1 }G\'en\'eralisation du probl\`eme de production et de stockage dans le plan}{27}{subsection.5.1}%
+\contentsline {subsection}{\numberline {2 }Transfert de couleurs entre deux images}{30}{subsection.5.2}%

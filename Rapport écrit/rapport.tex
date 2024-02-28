@@ -1,0 +1,1176 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{fancyhdr,fancybox} % pour personnaliser les en-têtes
+\usepackage{lastpage,setspace}
+\usepackage{amsfonts,amssymb,amsmath,amsthm,mathrsfs}
+\usepackage{relsize,exscale,bbold}
+\usepackage{paralist}
+\usepackage{xspace,multicol,diagbox,array}
+\usepackage{xcolor}
+\usepackage{variations}
+\usepackage{ragged2e}
+\usepackage{xypic}
+\usepackage{eurosym,stmaryrd}
+\usepackage{graphicx}
+\usepackage[np]{numprint}
+\usepackage{hyperref} 
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{MnSymbol,wasysym}
+\usepackage{natbib}
+\usepackage[top=1.5cm,bottom=1.5cm,right=1.2cm,left=1.5cm]{geometry}
+\usetikzlibrary{calc, arrows, plotmarks, babel,decorations.pathreplacing}
+\setstretch{1.25}
+
+
+
+
+\newtheorem{thm}{Théorème}
+\newtheorem{rmq}{Remarque}
+\newtheorem{prop}{Propriété}
+\newtheorem{cor}{Corollaire}
+\newtheorem{lem}{Lemme}
+\newtheorem{prop-def}{Propriété-définition}
+
+\theoremstyle{definition}
+
+\newtheorem{defi}{Définition}
+\newtheorem{ex}{Exemple}
+\newtheorem*{rap}{Rappel}
+\newtheorem{cex}{Contre-exemple}
+\newtheorem{exer}{Exercice} % \large {\fontfamily{ptm}\selectfont EXERCICE}
+\newtheorem{nota}{Notation}
+\newtheorem{ax}{Axiome}
+\newtheorem{appl}{Application}
+\newtheorem{csq}{Conséquence}
+\def\di{\displaystyle}
+
+
+
+\renewcommand{\thesection}{\Roman{section}}\renewcommand{\thesubsection}{\arabic{subsection} }\renewcommand{\thesubsubsection}{\alph{subsubsection} }
+
+\newcommand{\C}{\mathbb{C}}\newcommand{\R}{\mathbb{R}}\newcommand{\Q}{\mathbb{Q}}\newcommand{\Z}{\mathbb{Z}}\newcommand{\N}{\mathbb{N}}\newcommand{\V}{\overrightarrow}\newcommand{\Cs}{\mathscr{C}}\newcommand{\Ps}{\mathscr{P}}\newcommand{\Rs}{\mathscr{R}}\newcommand{\Gs}{\mathscr{G}}\newcommand{\Ds}{\mathscr{D}}\newcommand{\happy}{\huge\smiley}\newcommand{\sad}{\huge\frownie}\newcommand{\danger}{\begin{tikzpicture}[x=1.5pt,y=1.5pt,rotate=-14.2]
+	\definecolor{myred}{rgb}{1,0.215686,0}
+	\draw[line width=0.1pt,fill=myred] (13.074200,4.937500)--(5.085940,14.085900)..controls (5.085940,14.085900) and (4.070310,15.429700)..(3.636720,13.773400)
+	..controls (3.203130,12.113300) and (0.917969,2.382810)..(0.917969,2.382810)
+	..controls (0.917969,2.382810) and (0.621094,0.992188)..(2.097660,1.359380)
+	..controls (3.574220,1.726560) and (12.468800,3.984380)..(12.468800,3.984380)
+	..controls (12.468800,3.984380) and (13.437500,4.132810)..(13.074200,4.937500)
+	--cycle;
+	\draw[line width=0.1pt,fill=white] (11.078100,5.511720)--(5.406250,11.875000)..controls (5.406250,11.875000) and (4.683590,12.812500)..(4.367190,11.648400)
+	..controls (4.050780,10.488300) and (2.375000,3.675780)..(2.375000,3.675780)
+	..controls (2.375000,3.675780) and (2.156250,2.703130)..(3.214840,2.964840)
+	..controls (4.273440,3.230470) and (10.640600,4.847660)..(10.640600,4.847660)
+	..controls (10.640600,4.847660) and (11.332000,4.953130)..(11.078100,5.511720)
+	--cycle;
+	\fill (6.144520,8.839900)..controls (6.460940,7.558590) and (6.464840,6.457090)..(6.152340,6.378910)
+	..controls (5.835930,6.300840) and (5.320300,7.277400)..(5.003900,8.554750)
+	..controls (4.683590,9.835940) and (4.679690,10.941400)..(4.996090,11.019600)
+	..controls (5.312490,11.097700) and (5.824210,10.121100)..(6.144520,8.839900)
+	--cycle;
+	\fill (7.292960,5.261780)..controls (7.382800,4.898500) and (7.128900,4.523500)..(6.730460,4.421880)
+	..controls (6.328120,4.324220) and (5.929680,4.535220)..(5.835930,4.898500)
+	..controls (5.746080,5.261780) and (5.999990,5.640630)..(6.402340,5.738340)
+	..controls (6.804690,5.839840) and (7.203110,5.625060)..(7.292960,5.261780)
+	--cycle;
+	\end{tikzpicture}}\newcommand{\alors}{\Large\Rightarrow}\newcommand{\equi}{\Leftrightarrow}
+\newcommand{\fonction}[5]{\begin{array}{l|rcl}
+		#1: & #2 & \longrightarrow & #3 \\
+		& #4 & \longmapsto & #5 \end{array}}
+\newcommand{\disp}{\displaystyle}\newcommand{\Pro}{\mathbb{P}}
+
+\definecolor{vert}{RGB}{11,160,78}
+\definecolor{rouge}{RGB}{255,120,120}
+\definecolor{bleu}{RGB}{15,5,107}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily,
+	keywordstyle=\color{blue},
+	stringstyle=\color{green},
+	commentstyle=\color{gray},
+	numbers=left,
+	numberstyle=\tiny,
+	breaklines=true,
+	showstringspaces=false,
+	frame=single
+}
+
+
+
+\pagestyle{fancy}
+\lhead{}\chead{}\rhead{TER: Université d'Angers, faculté des sciences}\lfoot{Tudal Crequy et Ivanhoé Botcazou}\cfoot{\thepage/34}\rfoot{Année~2022-2023 }\renewcommand{\headrulewidth}{0.4pt}\renewcommand{\footrulewidth}{0.4pt}
+
+
+\begin{document}
+
+
+
+	\noindent\shadowbox{	\begin{minipage}{1\linewidth}\centering
+			\huge{\textbf{ Transport optimal et distances de Wasserstein }}
+		\end{minipage}}
+
+\raggedright
+\bigskip\hfill\\[3cm]
+	\tableofcontents
+	\newpage
+	
+\section{Introduction}
+\justifying	
+
+
+\par Le transport optimal est un problème mathématique qui consiste à trouver le coût minimal pour transporter une mesure de probabilité source vers une autre mesure de probabilité cible. Cette notion a été introduite pour la première fois par le mathématicien français Gaspard Monge en 1781, dans son ouvrage "Mémoire sur la théorie des déblais et des remblais". Celui-ci cherchait à déplacer de manière optimale des tas de sable vers des fossés pour des fins militaires.\\[-0.3cm]
+
+\par Comme nous pourrons le voir, la modélisation du problème de transport optimal par Monge est particulièrement contraignante. Elle ne trouve pas toujours de réponses et l'unicité de celle-ci n'est pas garantie. L'approche du problème fût assouplie par les travaux de Leonid Kantorovich et Tjalling Koopmans en 1975. Ils ont tous deux reçu le prix Nobel d'économie pour leur travail sur cette question.\\[-0.3cm]
+
+\par Le transport optimal est un sujet de recherche utilisé dans des domaines comme l'économie, l'informatique, la physique, la biologie et bien d'autres. Il sert à résoudre des problèmes de planification de production dans l'industrie, il aide en biologie pour le suivi de la circulation sanguine dans le corps humain. Par exemple, il peut être utilisé dans la grande distribution pour faciliter les transports de marchandises. Connaissant les stocks dans les entrepôts et les demandes des clients, il est possible d'optimiser l'envoi de marchandises en utilisant le transport optimal. \\[-0.3cm]
+
+\par Dans ce sujet de recherche encadré par \emph{Fabien Panloup}, nous allons explorer les origines du transport optimal ainsi que sa modélisation mathématique à travers les époques. Nous introduirons le théorème de dualité de Kantorovich et la distance de Wasserstein qui découlent de ce problème mathématique. Cette distance nous permettra de comparer des densités de probabilités en cherchant leurs similarités. Nous proposerons finalement une approche algorithmique avec la résolution de problèmes de transport optimal sur des exemples. 
+
+\subsection*{Notations mathématiques:}
+\noindent On note 
+\begin{itemize}[$\bullet$]
+	\item Soit E un ensemble et $x_0\in E$,\ $\delta_{\{x_0\}}$ est la mesure de Dirac en $x_0$. 
+	\item Pour E un ensemble fini, $\Ps(F)$ est l'ensemble des parties de $E$. 
+	\item La notation $\|\cdot\|$ est associée à la norme euclidienne s'il n'y a pas de précision donnée. 
+	\item Soit $I$ un intervalle réel, on note $\mathscr{B}(I)$ l'ensemble des Boréliens de $I$.
+	\item Un espace topologique est séparable s'il contient un sous-ensemble dense et au plus dénombrable.
+	\item Un espace métrique $(E,d)$ est polonais s'il est séparable et complet.   
+	\end{itemize}
+
+\section{Formulation du problème}
+
+\subsection{Modélisation du problème par Monge}
+\subsubsection{Problème dans le cas discret}
+\noindent Le mathématicien Gaspard Monge posait la question suivante : quelle est la manière la plus économique de remplir un trou avec un tas de sable ? \\ 
+
+\noindent Soit $(n,m)\in\N^2$. Pour essayer de répondre à cette question, considérons $E : = \{x_1,\dots,x_n\}$ un espace discret muni d'une mesure de probabilité source $\disp \mu = \sum_{i=1}^{n}\alpha_i\delta_{\{x_i\}}$. L'espace de départ est associé aux tas de sables avec les densités respectives de sable pour chacun des tas. Ainsi on a \  $\disp\sum_{i=1}^{n}\alpha_i = 1$ avec $\alpha_i\geq0$ pour tout $i\in\llbracket1,n\rrbracket$. De même, considérons $F : = \{y_1,\dots,y_m\}$ un espace discret muni d'une mesure de probabilité cible $\disp \nu = \sum_{i=1}^{m}\beta_i\delta_{\{y_i\}}$. L'espace de départ est associé aux trous avec les densités respectives de vide pour chacun.
+
+\noindent Ainsi on a \  $\disp\sum_{i=1}^{m}\beta_i = 1$ avec $\beta_i\geq0$ pour tout $i\in\llbracket1,m\rrbracket$. \\
+
+\noindent La modélisation du problème de Monge revient à construire une application mesurable $T : E \longrightarrow F$ transportant $\mu$ sur $\nu$ à coût minimal (\textit{la notion de coût sera introduite par la suite}). La contrainte est la suivante:
+
+$$\forall C\in\Ps(F), \quad \mu (\{x : T(x) \in C\}) = \nu(C)$$
+
+\noindent Nous introduisons la notation $T_{\#\mu}$ pour désigner la \emph{mesure image} de $\mu$ par $T$. Ainsi 
+
+$$ \forall C\in\Ps(F), \quad T_{\#\mu}(C) = \mu(T^{-1}(C)) = \mu({x \in E : T(x) \in C})$$
+
+\begin{ex}
+	Plaçons-nous dans le plan. Soit $E : = \{(0, 0), (1, 1)\}$ muni de la mesure $\mu = \frac{1}{2}\delta_{\{(0, 0)\}} + \frac{1}{2}\delta_{\{(1, 1)\}} $ et\\ $F : = \{(0, 1), (1, 0)\}$ muni de la mesure $\nu = \frac{1}{2}\delta_{\{(0, 1)\}} + \frac{1}{2}\delta_{\{(1, 0)\}} $. On trouve deux applications de transport $T_1,T_2$ sont possibles: 
+	$$T_1((0,0))=(0,1); \ T_1((1,1))=(1,0)$$
+	$$T_2((0,0))=(1,0); \ T_2((1,1))=(0,1)$$
+\end{ex}
+
+\subsubsection{Transport optimal pour un coût optimal}
+
+
+\noindent Monge avait introduit le coût d'un transport dans le cadre de son problème, les espaces de départ et d'arrivée étant les mêmes ($E=F=\R^2$). Il avait défini le coût pour transporter une unité de masse en $x$ vers $y = T (x)$ comme la distance euclidienne entre $x$ et $y$. Pour une fonction de coût donnée, les applications effectuant le transport n'ont pas nécessairement le même coût. Ainsi, nous chercherons à minimiser le coût de transport en optimisant sur l'ensemble des fonctions de transport sous la contrainte $\nu =  T_{\#\mu}$. 
+
+\begin{ex}
+	Le coût engendré par une application de transport donnée $T$ dans le problème de Monge vaut
+
+	$$C_1 (T) = \int_{\R^2}\|x -T (x)\| \ \mu(dx).$$
+\hfill\\	
+\end{ex}
+\noindent Pour une fonction de coût $C$ donnée, on cherche à déterminer
+$C (\mu, \nu) = \text{inf}\{C(T );\ T : A \to B, \ T_{\#\mu} = \nu\}$. Si cela est possible, on note $T^*$ comme une application optimale  réalisant cet infimum.
+$$T^* = \text{arginf}\{C(T ); \ T : E \to F, \ T_{\#\mu} = \nu\}$$
+
+\begin{rmq}
+	Sous les contraintes du problème de Monge, certaines questions peuvent être posées: 
+	\begin{itemize}
+		\item Pour deux mesures de probabilités $\mu$ et $\nu$, existe-t-il toujours une application $T^*$ qui réalise l'infimum précédent ?
+		\item S'il existe une application $T^*$ qui réalise l'infimum, est-elle unique ? 
+	\end{itemize}
+\end{rmq}
+\newpage
+\begin{prop} Soit $\R^2$ muni de deux mesures discrètes $\mu,\nu$. Considérons le problème de transport optimal associé à la fonction de coût $C_1$ qui est la distance euclidienne. Si $T^*$ est une application de transport minimisant $C (\mu, \nu)$, pour $x_1,x_2\in \R^2$ et $y_1,y_2\in \R^2$ tels que $T^*(x_1)=y_1$ et $T^*(x_2)=y_2$ on a: \\
+	$\bullet$ ou bien tous les points sont alignés\\
+	$\bullet$ ou bien les segments $[x_1 , y_1 ]$ et $[x_2 , y_2]$ ne se coupent pas
+	sauf si $x_1 = x_2$ ou $y_1 = y_2$.
+\end{prop}
+\begin{proof}\hfil\\
+	Par l'absurde supposons que les points ne sont pas alignés et $x_1 \neq x_2$ et $y_1 \neq y_2$ mais que les segments se coupent en un point $c$.
+	Posons $T'$ une autre application de transport vérifiant la contrainte $T'_{\#\mu} = \nu$ telle que $T'(x_1)= y_2$, $T'(x_2)= y_1$ et $T'=T^*$ sur les autres points de $E$. 
+	La norme euclidienne vérifie l'inégalité triangulaire avec égalité si et seulement si les vecteurs sont colinéaires. On obtient:
+	\begin{align*}
+	\|x_1-T'(x_1))\|+\|x_2-T'(x_2)\|& = \|x_1-y_2\|+\|x_2-y_1\|\\
+									& < \|x_1-c\|+\|y_2-c\|+\|x_2-c\|+\|y_1-c\|\\
+									& = \|x_1-c\| +\|c-y_1\|+\|x_2-c\|+\|c-y_2\| \\
+									& = \|x_1-y_1\|+\|x_2-y_2\|\\
+									& = \|x_1-T^*(x_1))\|+\|x_2-T^*(x_2)\|
+	\end{align*}
+	En sommant sur $E$ on obtient que $C_1 (T') < C_1 (T^*)$ ce qui est absurde car cela contredit la minimalité de l'application de transport optimal $T^*$. 
+	\begin{figure*}[!h]
+		\centering 
+		\includegraphics*[scale=0.5]{image1.png}
+		\caption{Illustration du raisonnement précédent}
+	\end{figure*}
+\end{proof}
+
+\begin{ex}\textit{"Un transport optimal qui n'est pas unique"}\\
+	Soit $A$ le carré de diagonale $(0, 0)--(1, 1)$ et $B$ le carré de diagonale $(0, 0)-- ~(-1, 1)$. On associe les
+	mesures de probabilité $\mu$ et $\nu$ sur $\R^2$ définies pour tout $x\in\R^2$ par  
+	$$d\mu(x) =	\dfrac{\mathbb{1}_A(x)}{|A|}dx = \mathbb{1}_A(x)dx\quad \text{et} \quad d\nu(x) =	\dfrac{\mathbb{1}_B(x)}{|B|}dx = \mathbb{1}_B(x)dx	$$
+	\newpage
+	\noindent Proposons deux applications distinctes de transport optimal $T_1$ et $T_2$ sous la contrainte du problème de Monge associées au coût de la distance euclidienne.
+	$$T_1((x,y)) = (-x,y) \quad \text{et} \quad T_2((x,y)) = (x-1,y).$$
+	En effet on a :
+	\begin{align*}
+	&\bullet \quad C_1(T_1)= \int_{\R^2}\|(x,y)-T_1((x,y))\|d\mu(x) = \int_{[0,1]^2}\sqrt{(2x)^2+(y-y)^2}~dxdy = 2 \int_{[0,1]^2} |x|~dxdy = 1\\\\
+	&\bullet \quad C_1(T_2)= \int_{\R^2}\|(x,y)-T_2((x,y))\|d\mu(x) = \int_{[0,1]^2}\sqrt{(x-(x-1))^2+(y-y)^2}~dxdy =  \int_{[0,1]^2} 1~dxdy = 1
+	\end{align*}
+	Ainsi $C_1(T_1)= C_1(T_2)$, il n'y a pas toujours unicité dans le problème de transport optimal. 
+
+\end{ex}
+
+\begin{ex}\textit{"Application de transport à sens unique"}\\
+	$A$ est le carré unité et $B$ un carré infinitésimal en $(0,0)$. On associe les
+	mesures de probabilité $\mu$ et $\nu$ sur $\R^2$ définies par
+	$$d\mu(x) =	\dfrac{\mathbb{1}_A(x)}{|A|}dx = \mathbb{1}_A(x)dx\quad \text{et} \quad d\nu(x) =	\delta_{\{(0, 0)\}}(x).	$$
+	Pour transporter la mesure $\mu$ sur la mesure $\nu$, il n'existe qu'une seule application de transport $T^*$ telle que pour tout $x\in A,\  T^*(x) = (0, 0)$. En revanche, il est impossible de transporter la mesure $\nu$ sur la mesure $\mu$ sous les contraintes du problème de Monge. Toute la masse est concentrée en un point $(0,0)$, pour toute application de transport $T$ on remarque qu'il existe un unique $x_0\in A$ tel que $T((0,0))=x_0$ (ceci par unicité de l'image d'une application).
+	 Or $\mu(\{x_0\})=0 \ \neq \nu(T^{-1}(\{x_0\})) =  \nu((0,0)) = 1$. 	 	
+\end{ex}
+
+\begin{rmq}
+	Dans l'exemple précédent, pour le transport retour on souhaiterait pouvoir répartir la masse présente en $(0,0)$, sans l'envoyer uniquement au point $T ((0,0))$.
+	Pour pallier à ce problème, nous allons remplacer l'application de transport $T$ par une notion mathématique plus générale.
+\end{rmq}
+\subsection{Assouplissement des contraintes, problème de Monge-Kantorovich}
+ \noindent Nous allons introduire une version relâchée du problème de transport optimal, cette approche est celle proposée par le mathématicien russe Leonid Kantorovich pour laquelle il a obtenu le prix Nobel d'économie en 1975.
+ \subsubsection{Une approche probabiliste du transport optimal}
+ \begin{defi}\hfil\\
+ 	Soit $(E,\mathcal{A})$ un ensemble mesurable et $\mathcal{P}(E)$ l'ensemble des mesures de probabilité sur $E$. Un \emph{noyau} sur $E$ est une application $p : E \to \mathcal{P}(E)$ telle que pour tout $x\in E$ on note $p_x(\cdot) : = p(x)(\cdot)$ la mesure de probabilité associée et pour toute fonction mesurable bornée de $E$ vers $\R$, l'application $\disp x\mapsto\int_{E}f(y)p_x(dy)$ est mesurable. \\[0.25cm]   
+ \end{defi} 
+
+\noindent Ainsi pour $\mu$ une mesure de probabilité source et $\nu$ une mesure de probabilité cible sur un même espace $(E,\mathcal{A})$, nous souhaitons modéliser le problème de transport optimal dans un cadre non déterministe. Nous pourrions essayer de trouver un noyau $p$ sur $E$ sous la contrainte : 
+
+$$\forall A \in \mathcal{A}, \ \nu(A) = \int_{E}\int_{A}  p_x(dy)\mu(dx)$$ 
+
+\noindent Ainsi nous retrouvons l'idée de mesure pré-image vue à la section précédente mais avec la possibilité de déplacer la masse présente en $x$ selon une certaine densité de probabilité $p_x$.  
+
+
+\begin{ex}\hfill\\
+	On se place dans $\R^2$ muni de la fonction de coût $C_p(x, y) = |x - y|^p$, $x, y \in \R^2$, $p\in\N^*$ et on considère $A = \{0\} \times [0, 1]$, $B = \{-1\} \times [0, 1]$ et $C = \{1\} \times [0, 1]$. Pour $m$ une mesure uniforme sur $[0, 1]$, on considère ensuite les mesures de probabilité.
+	
+	$$\mu = \delta_0 \otimes m \quad \text{et} \quad \nu = \dfrac{1}{2}\delta_{-1} \otimes m+ \dfrac{1}{2}\delta_{1} \otimes m. $$
+	$\mu$ est la loi de $(0, X)$ où $X$ suit la loi uniforme sur $[0, 1]$, et $\nu$ est la loi de $(\varepsilon, X)$ où $\varepsilon$ est une variable aléatoire indépendante de $X$, de loi de Rademacher
+	$\mathbb P [\varepsilon = 1] = \mathbb P [\varepsilon = -1] = \dfrac{1}{2}$.  
+	\begin{itemize}
+		\item on tire $(0,X)$ suivant la loi $\mu$.
+		
+		\item conditionnellement au tirage de $(0,X) = (0,x_2) = x$, on tire $(\varepsilon,X)$ suivant le noyau $p_x$ défini par:
+		$$p_x(\cdot) = \dfrac{1}{2}\delta_{(-1,x_2)} \otimes \delta_{\{-1;1\}\times\{x_2\}} (\cdot)+ \dfrac{1}{2}\delta_{(1,x_2)} \otimes \delta_{\{-1;1\}\times\{x_2\}}(\cdot) = \dfrac{1}{2}\delta_{(-1,x_2)} (\cdot)+ \dfrac{1}{2}\delta_{(1,x_2)} (\cdot)$$
+	\end{itemize}
+
+	\noindent Soit $a\in\{-1;1\}$ et $A\in\mathscr{B}([0,1])$ on a  $\nu(\{a\}\times A) = \dfrac{1}{2}\times |A|$ où $|A|$ est la mesure de Lebesgue pour l'ensemble $A$. Or on remarque que 
+	\begin{align*}
+	\iint_{\R^2\times\R^2} \mathbb{1}_{\{a\}\times A}(y)p_x(dy)\mu(dx) &= \int_{[0,1]} \left(\int_{\R^2} \mathbb{1}_{\{a\}\times A}(y) \dfrac{1}{2}\delta_{(-1,x_2)} (dy)+ \dfrac{1}{2}\delta_{(1,x_2)} (dy) \right)dx_2\\
+	& = \int_{[0,1]} \left(\int_{\R^2} \mathbb{1}_{\{a\}\times A}(y) \dfrac{1}{2}\delta_{(a,x_2)} (dy)\right)dx_2\\
+	& = \int_{[0,1]} \left(\int_{\R^2} \mathbb{1}_{\{a\}\times A}(y) \dfrac{1}{2}\delta_{(a,x_2)} (dy)\right)dx_2\\
+	& = \int_{A} \dfrac{1}{2} ~ dx_2 =  \dfrac{1}{2}\times |A| = \nu(\{a\}\times A)
+	\end{align*}
+	
+	\noindent Nous observons que le noyau $p_x$ défini précédemment respecte la contrainte de transport de la mesure $\mu$ sur la mesure $\nu$. Étudions le coût de ce transport:
+	\begin{align*}
+	\iint_{\R^2\times\R^2} |x-y|^p p_x(dy)\mu(dx) &= \int_{[0,1]}\left(\int_{\R^2} |(0,x_2)-y|^p\dfrac{1}{2}\delta_{(-1,x_2)} (dy)+ \dfrac{1}{2}\delta_{(1,x_2)} (dy) \right)dx_2\\
+	& = \int_{[0,1]}\left( \dfrac{1}{2}\times |(0,x_2)-(-1,x_2)|^p + \dfrac{1}{2}\times |(0,x_2)-(1,x_2)|^p \right)dx_2\\
+	& = \int_{[0,1]}\left( \dfrac{1}{2} + \dfrac{1}{2} \right)dx_2 = 1.
+	\end{align*}
+	
+\end{ex} 
+
+\subsubsection{Noyaux et couplages}
+
+\begin{defi}
+	
+	\hfil\\
+	\noindent Soit $(E,\mathcal{A})$ un ensemble mesurable et $\mu, \nu \in \mathcal{P}(E)$. Un \emph{couplage} entre $\mu$ et $\nu$ est une probabilité $\pi$ sur $E\times E$ vérifiant pour tout $ A, B \in \mathcal{A}$
+	$$  \mu(A) = \iint_{E \ E }\mathbb{1}_A(x)\pi(dxdy) \quad \text{et} \quad \nu(B) = \iint_{E \ E }\mathbb{1}_B(y)\pi(dxdy)  $$
+	
+	
+	\noindent On note $\Pi(\mu, \nu)$ l'ensemble de tous les couplages entre $\mu$ et $\nu$.
+\end{defi}
+\begin{rmq}
+	Un couplage entre $\mu$ et $\nu$ est une probabilité $\pi$ telle que la première marginale est $\mu$ et la seconde est $\nu$. 
+\end{rmq}
+
+\noindent Faisons le lien entre un noyau muni d'une mesure source et un couplage pour pouvoir utiliser la notion de couplage dans le problème de transport optimal.
+
+\begin{prop}
+	Soit $(E,\mathcal{A})$ un ensemble mesurable. 
+	\begin{enumerate}
+		\item Pour toute mesure $\mu\in \mathcal{P}(E)$ et tout noyau $p$ sur $E$ on peut associer une mesure $\pi$ sur $E\times E$ qui couple la mesure $\mu$ et la mesure $\nu$ défini par :
+		$$\forall B\in\mathcal{A}, \ \nu(B) = \int_E\int_{B}p_x(dy)\mu(dx)  $$
+		\item Soit $\pi$ une mesure de couplage entre deux mesures de probabilité $\mu$ et $\nu$ sur $E$, on peut associer $\pi$ à un noyau $p$ défini presque partout sur $E$ et à la mesure $\mu$. 
+	\end{enumerate} 
+\end{prop}
+
+
+\begin{proof}\hfil\\
+	\begin{enumerate}
+		\item Soit $A,B\in\mathcal{A}$ on note $\pi(A\times B) = \int_{A}\int_{B}p_x(dy)\mu(dx)$. \\
+		On a $\pi$ qui est une mesure de probabilité sur $E\times E$, montrons qu'elle couple $\mu$ avec $\nu$.\\
+		On obtient les mesures marginales de la manière suivante:
+		$$
+		\pi(E\times B) = \int_E\int_{B}p_x(dy)\mu(dx)= \nu(B)
+		$$ 
+		% \int_E\int_{E}\mathbb{1}_{B}(y)p_x(dy)\mu(dx)\\[0.25cm]%&\overset{(1)}{=}\int_E\mathbb{1}_{B}(y)\int_{E}p_x(dy)\mu(dx)\\[0.25cm]%&= \int_B\int_{E}p_x(dy)\mu(dx) = \int_B\nu(dy) =
+
+		$$ \pi(A\times E) = \int_{A}\int_E p_x(dy)\mu(dx)= \int_{A}\mu(dx)\int_E p_x(dy)= \int_{A}\mu(dx)\times1 = \mu(A)$$
+		
+		\item Soit $\pi$ une mesure de couplage entre deux mesures de probabilité $\mu$ et $\nu$ sur $E$ et $F$ (ici $F=E$). Notons $X,Y$ deux variables aléatoires définies sur un même espace probabilisé $\left(\Omega, \mathcal{B}, \mathbb{P}\right)$ à valeurs dans $E$ de loi respective $\mu$ et $\nu$. Soit $\Phi: E\times E \to \R$.
+		
+		\begin{align*}
+			\int_{E\times F}\Phi(x,y)d\pi(x,y) &= \mathbb E (\Phi(X,Y)) \\
+			&= \mathbb E (\mathbb E (\Phi(X,Y)|X))\\
+			& \overset{(*)}{=} \int_{E}\mathbb E (\Phi(X,Y)|X=x)d\mu(x)\\
+			& = \int_{E}\left(\int_{F}\Phi(x,y)dp_x(y)\right)d\mu(x)\\
+			& = \int_{E\times F}\Phi(x,y)dp_x(y) d\mu(x)						
+		\end{align*}
+		
+		$(*)$ Nous remarquons que pour tout $x\in E$, l'objet $E (\Phi(X,Y)|X=x)$ n'est pas toujours défini correctement. Cet objet est défini presque partout sur $E$ au sens de la mesure $\mu$ par  $$E (\Phi(X,Y)|X=x) = \lim\limits_{\varepsilon\to0} E (\Phi(X,Y)|X\in[x-\varepsilon,x+\varepsilon])$$	
+		
+		%soit $x\in E$ et pour tout $A\in\mathcal{A}$ on définit
+		%$$p(x)(A)= p_x(A) = \int_{A}\dfrac{\pi(\{x\}\times dy)}{\pi(\{x\}\times E)}  $$%= \int_{A}\dfrac{\pi(dxdy)}{\mu(dx)}
+		%Pour tout $A,B\in\mathcal{A}$ on pose
+		
+		 %$$\pi(A\times B) = \int_{A}\int_{B} \pi(dx\times dy) \times \dfrac{\int_{E}\pi(dx\times dz)}{\int_{E}\pi(dx\times dz)} = \int_{A}\int_{B}p_x(dy)\mu(dx)$$.
+		
+	\end{enumerate} 
+	
+	
+\end{proof}
+
+\begin{ex}
+	La mesure $\pi$ sur $E\times E$ peut être associée au couple de variables aléatoires $(X, Y )$ définies sur un même espace de probabilité $(\Omega,\mathcal{B}, \mathbb P)$ telles que $X$ est distribuée selon $\mu$ et $Y$ selon $\nu$. Donnons sous certaines conditions la forme du noyau $p_x$:
+	
+	\begin{itemize}
+		\item Si $X$ est à valeurs discrètes, alors pour tout $x \in X(\Omega)$ tel que
+		$\mathbb{P}(\{X = x\}) > 0$.
+		
+		$$p_x(A) = \mathbb{P}(\{Y\in A\} | \{X = x\}) = \dfrac{\mathbb{P}(\{Y\in A\} \cap \{X = x\})}{\mathbb{P}(\{X = x\})}$$
+		\item Dans le cas où $\pi$ est une probabilité sur $\R^n\times \R^n$ admettant une densité par rapport à Lebesgue : \\ $\pi(dxdy) = h(x, y) dxdy$. 
+		$$\forall A\in\mathscr{B}(\R^n),\quad p_x(A) = \int_{A}\dfrac{h(x,y)}{\int_{E}h(x,z)dz}dy$$ 
+	\end{itemize}
+\end{ex}
+
+\begin{rmq}
+	Par ce qui précède, nous observons que la contrainte posée sur le transport de la mesure $\mu$ vers la mesure $\nu$ peut être associée de manière équivalente à l'aide d'un noyau ou bien d'une mesure de couplage.
+\end{rmq}
+
+
+\begin{defi}Soient $c$ une fonction de coût mesurable sur $E\times E$ et $\mu, \nu \in \mathcal{P}(E)$; le coût de transport associé à un couplage $\pi \in \Pi(\mu, \nu)$ est défini par
+
+	$$I_c (\pi) = \iint_{E \ E }
+	c(x, y) \pi(dxdy)$$
+Le coût de transport optimal entre $\mu$ et $\nu$ est donné par :
+ $\mathcal T_c (\mu, \nu) = \text{inf }\big\{I_c (\pi) \ : \ \pi \in \Pi(\mu, \nu) \big\}$
+
+\end{defi}
+
+\begin{rmq}
+	La modélisation du problème de Monge-Kantorovich s'apparente à un problème d'optimisation sur l'espace des couplages possibles entre deux mesures de probabilité. Si le minimum est réalisé, $I_c (\pi^*) = T_c (\mu, \nu)$, on dit que $\pi^*$ est un couplage optimal ou encore un plan de transport optimal.
+\end{rmq}
+
+
+\begin{ex} \textit{"Transport de deux Bernoulli"}\\
+	Soient $x_1,x_2,y_1,y_2\in \R^2$ et $p_1,p_2\in[0,1]$, on pose $$\mu = p_1\delta_{x_1}(\cdot) + (1-p_1)\delta_{x_2}(\cdot)  \quad \text{et} \quad \nu = p_2\delta_{y_1}(\cdot) + (1-p_2)\delta_{y_2}(\cdot) $$
+	\noindent deux mesures de probabilité modélisant deux lois de Bernoulli. Soit $X,Y$ deux variables aléatoires définies sur le même espace de lois respectives $\mu$ et $\nu$, le couplage $\pi$ modélisant la loi du vecteur aléatoire $(X,Y)$. \\  
+	
+	\noindent Tout couplage $\pi \in \Pi(\mu,\nu)$ s'apparente à une matrice de $\mathcal M_2([0,1])$ telle que: 
+	
+	\begin{align}
+	&\pi = \begin{pmatrix}
+	x&y\\
+	z&w
+	\end{pmatrix} \ = \ \begin{pmatrix}
+	\Pro(\{X=x_1\}\cap \{Y=y_1\})&\Pro(\{X=x_2\}\cap \{Y=y_1\})\\
+	\Pro(\{X=x_1\}\cap \{Y=y_2\})&\Pro(\{X=x_2\}\cap \{Y=y_2\})
+	\end{pmatrix}\\
+	&\left\{\begin{array}{l}
+	x+y = p_2\\
+	z+w = 1-p2\\
+	x+z = p_1\\
+	y+w = 1-p_1	
+	\end{array}\right.
+	\end{align} 
+Ce problème est équivalent à la résolution du système
+$$AX=\begin{pmatrix}
+1&1&0&0\\
+0&0&1&1\\
+1&0&1&0\\
+0&1&0&1
+\end{pmatrix}X = Y_0 \quad\text{avec}\quad X\in\R^4, \ Y_0 = \begin{pmatrix}
+p_2\\1-p_2\\p_1\\1-p_1
+\end{pmatrix}$$
+
+\noindent Une solution particulière de ce système est le cas d'indépendance en les variables $X$ et $Y$. On trouve donc 
+
+$$X_0= \begin{pmatrix}
+p_2p_1\\p_2(1-p_1)\\p_1(1-p_2)\\(1-p_1)(1-p_2)
+\end{pmatrix}\quad  \text{pour le couplage}  \quad \pi_0 = \begin{pmatrix}
+p_2p_1&p_2(1-p_1)\\
+p_1(1-p_2)&(1-p_1)(1-p_2)
+\end{pmatrix}$$ 
+
+\noindent On résout le système linéaire: $$AX=\begin{pmatrix}
+1&1&0&0\\
+0&0&1&1\\
+1&0&1&0\\
+0&1&0&1
+\end{pmatrix}X = 0_{\R^4}$$
+
+\noindent Ainsi l'ensemble solution est: 
+$$S : = \left\{ \begin{pmatrix}
+p_2p_1\\p_2(1-p_1)\\p_1(1-p_2)\\(1-p_1)(1-p_2)\end{pmatrix} + \lambda \cdot\begin{pmatrix}
+1\\-1\\-1\\1\end{pmatrix} \ : \ \lambda\in\R\right\}$$
+
+\noindent On en déduit que $\Pi(\mu,\nu)$ est associé à l'ensemble des matrices :
+
+$$\Pi(\mu,\nu) \cong\left\{\begin{pmatrix}
+p_2p_1 +\lambda&p_2(1-p_1) -\lambda\\
+p_1(1-p_2)-\lambda&(1-p_1)(1-p_2)+\lambda
+\end{pmatrix}\right\}\bigcap \mathcal M_2([0,1])  $$
+
+\noindent La contrainte d'être dans l'ensemble $\mathcal M_2([0,1])$ implique de choisir $\lambda$ dans un intervalle $J$ restreint de $\R$. Posons 
+\begin{align*}
+&m= \text{max}\big(-p_1p_2\ ;\ -(1-p_1)(1-p_2)\ ;\ p_2(1-p_1)-1 \ ; \ p_1(1-p_2)-1\big)\\
+&M = \text{min}\big(1-p_1p_2\ ;\ 1-(1-p_1)(1-p_2)\ ;\ p_2(1-p_1) \ ; \ p_1(1-p_2)\big)
+\end{align*}
+$$J = [m,M]$$
+
+\noindent Considérons la fonction de coût $c$ sur $\R^2$ associée à un problème de transport optimal (la distance euclidienne par exemple $\|\cdot\|$), pour tout$\lambda\in J$ soit $\pi_\lambda \in\Pi(\mu,\nu)$ on a: \\[-0.7cm]
+
+\begin{align*}
+	\disp I_c (\pi_\lambda) = \  &c(x_1,y_1)\times (p_2p_1 +\lambda) + c(x_2,y_1)\times (p_2(1-p_1) -\lambda) \\
+	&+ c(x_1,y_2)\times (p_1(1-p_2)-\lambda) + c(x_2,y_2)\times ((1-p_1)(1-p_2)+\lambda)
+\end{align*}
+%$\disp I_c (\pi_\lambda) = \  \|x_1-y_1\|\times (p_2p_1 +\lambda) + \|x_2-y_1\|\times (p_2(1-p_1) -\lambda) + \|x_1-y_2\|\times (p_1(1-p_2)-\lambda) + \|x_2-y_2\|\times ((1-p_1)(1-p_2)+\lambda)$
+
+\noindent Or le coût de transport optimal entre $\mu$ et $\nu$ est donné par :
+$\mathcal T_c (\mu, \nu) = \text{inf }\big\{I_c (\pi) \ : \ \pi \in \Pi(\mu, \nu) \big\}$
+
+\noindent Nous remarquons que \\[-0.7cm]
+ 
+ \begin{align*}
+ \disp I_c' (\pi_\lambda) =   c(x_1,y_1) - c(x_2,y_1) - c(x_1,y_2)+ c(x_2,y_2)
+ \end{align*}
+
+\noindent La fonction $I_c$ est affine, pour connaître son argument minimum sur $J$ il suffit de connaître le signe de $I_c'$. On en déduit la propriété suivante:
+
+\begin{enumerate}
+	\item Si $I_c'\geq 0$ le couplage optimal $\pi^*$ est : 
+	$$\pi^* = \begin{pmatrix}
+	p_2p_1 +m&p_2(1-p_1) -m\\
+	p_1(1-p_2)-m&(1-p_1)(1-p_2)+m
+	\end{pmatrix}$$ 
+	\item Si $I_c'< 0$ le couplage optimal $\pi^*$ est : 
+	$$\pi^* = \begin{pmatrix}
+	p_2p_1 +M&p_2(1-p_1) -M\\
+	p_1(1-p_2)-M&(1-p_1)(1-p_2)+M
+	\end{pmatrix}$$ 
+\end{enumerate}
+
+\subsubsection*{Productions et stockages dans le plan}
+
+\noindent Deux sites de production $X1$ et $X2$ ainsi que deux espaces de stockage $Y1$ et$Y2$ sont fixés dans le pavé $[-15,15]^2$ avec des capacités de production et de stockage différentes respectivement $p1 = 0.4 $, $1-p1 = 0.6$ et $p2 = 0.7$, $1-p2= 0.3$. Nous cherchons à connaître la manière la plus optimale de répartir les marchandises entre les deux entrepôts.
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.5]{ex1.png}
+	\caption{Modélisation du problème sous Jupyter-notebook}
+\end{figure*}
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.5]{ex2.png}
+	\caption{Représentation du coût de transport pour les différentes matrices de couplage}
+\end{figure*}
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.5]{ex3.png}
+	\caption{Matrice de couplage optimale}
+\end{figure*}
+\begin{figure*}[!h]
+	\centering
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,xscale= 0.75, yscale= 0.75]
+\draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=2.0cm,ystep=2.0cm] (-3.39,-3.05) grid (13.52,11.03);
+\draw[->,color=black] (-3.39,0) -- (13.52,0);
+\foreach \x in {-2,2,4,6,8,10,12}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.05) -- (0,11.03);
+\foreach \y in {-2,2,4,6,8,10}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-3.39,-3.05) rectangle (13.52,11.03);
+\draw [->] (8,8) -- (5,7);
+\draw [->] (1,2) -- (10,0);
+\draw (8.15,9.48) node[anchor=north west] {0.4};
+\draw (0.65,3.46) node[anchor=north west] {0.6};
+\draw (4.08,8.45) node[anchor=north west] {0.7};
+\draw (11.01,1.45) node[anchor=north west] {0.3};
+\draw [->] (1,2) -- (5,7);
+\draw (6.59,7.32) node[anchor=north west] {0.4};
+\draw (2.42,5.34) node[anchor=north west] {0.3};
+\draw (4.47,0.95) node[anchor=north west] {0.3};
+\begin{scriptsize}
+\fill [color=qqqqff] (8,8) circle (1.5pt);
+\draw[color=qqqqff] (8.53,8.63) node {$X1$};
+\fill [color=qqqqff] (1,2) circle (1.5pt);
+\draw[color=qqqqff] (1.11,2.76) node {$X2$};
+\fill [color=qqqqff] (5,7) circle (1.5pt);
+\draw[color=qqqqff] (4.61,7.53) node {$Y1$};
+\fill [color=qqqqff] (10,0) circle (1.5pt);
+\draw[color=qqqqff] (10.73,0.49) node {$Y2$};
+\end{scriptsize}
+\end{tikzpicture}
+\caption{Représentation dans le plan de la solution optimale}
+\end{figure*}
+  	
+\end{ex} 
+ 
+
+
+\newpage
+
+
+ \begin{rmq}
+	Le problème de transport optimal au sens de Monge se retrouve comme un cas particulier de la formulation du problème de transport optimal selon l'approche de Kantorovich. En effet si $T$ envoie $\mu$ sur $\nu$, le couplage $\pi_T$ de $\mu$ et $\nu$ est donné par le noyau $p: x\mapsto  \delta_{T(x)}(\cdot)$ et la mesure $\mu$.
+	
+	$$I_c (\pi_T ) = \iint_{E \ E }c(x,y)\delta_{T(x)}(y) \mu(dx) = \int_{E }c(x,T(x))\mu(dx) 	= C(T) \geq T_c (\mu, \nu)$$
+	Si le problème de Kantorovich admet un couplage optimal $\pi^*$ et que ce couplage est
+	déterministe alors l'application $T$ sera une solution du problème de Monge. Ainsi pour tout $x\in E$, il existe un unique $y\in E$ tel que $p_{\pi^*}(x)=\delta_{y}(\cdot)$ avec  $p_{\pi^*}$ un noyau et $\mu$ la mesure source qui sont tous deux associés au couplage $\pi^*$. 
+\end{rmq}
+
+
+\section{Dualité de Kantorovich et distance de Wassertein}
+\noindent Dans cette partie de notre rapport, nous allons apporter quelques éléments théoriques associés au transport optimal. Nous ne démontrerons pas tous les résultats et nous les supposerons parfois admis par la suite. 
+
+\subsection{Existence d'un couplage optimal pour une fonction de coût sci.}
+\begin{defi}\hfill\\
+	\begin{minipage}[t]{1\linewidth}
+	\begin{minipage}{0.47\linewidth}
+			Une fonction $f : E \to \R \cup\{+\infty\}$ est dite semi-continue inférieurement en $x \in E$	si pour toute suite $(x_n)_{n\in\N}$ convergeant vers $x$, on a
+		$$\lim\limits_{n\to +\infty}\inf f (x_n ) \geq f(x)$$
+	\end{minipage}\hfill
+\begin{minipage}{0.47\linewidth}
+	$$\includegraphics*[scale=0.5]{sci.png}$$
+\end{minipage}
+	\end{minipage}
+
+	
+\end{defi}
+
+\begin{rmq}
+	Une fonction est dite semi-continue inférieurement sur $E$ si elle est semi-continue inférieurement en tout point de $E$. On notera « semi-continue inférieurement » par sci.
+\end{rmq}
+
+\begin{rmq}
+	$f$ est dite $sci$ en $x_0$ si, lorsque $x$ est proche de $x_0$, $f(x)$ est soit proche de $f(x_0)$, soit supérieur à $f(x_0)$.
+\end{rmq}
+
+\begin{prop}
+	Une fonction $f : E \to \R \cup\{+\infty\}$ continue sur $E$ est sci sur $E$.
+	\begin{proof}
+		Pour tout $x\in E$ et toute suite $(x_n)_{n\in\N}$ convergeant vers $x$, $$\lim\limits_{n\to +\infty}\inf\limits_{k\geq n} f (x_k ) = \lim\limits_{n\to +\infty} f (x_n ) = f(x)\geq f(x)$$  
+	\end{proof}
+\end{prop}
+
+\begin{prop} \textbf{(Admis.)} \\
+	Une fonction sci sur un compact est minorée et atteint sa borne inférieure.
+
+	
+
+\end{prop}
+
+\begin{prop}\textit{"Sup de fonctions sci, régularisation"} \quad \textbf{(Admis.)} 
+	\begin{enumerate}
+		\item Si $(f_i )_{i\in I}$ est une famille quelconque de fonctions \emph{sci}, alors $f = \sup\limits_{i\in I} f_i$ est sci.
+		\item Si $f$ est une application sci minorée, alors il existe une suite croissante $(f_n )_{n\in \N}$ de fonctions continues bornées telles que $f = \sup\limits_{n\in \N} f_n$. On peut même supposer que pour tout $n \in \N$, la	fonction $f_n$ est $n-$Lipschitz sur $X$.
+	\end{enumerate} 
+\end{prop}
+
+\noindent Soit $(E , d)$ est un espace polonais, on va munir
+l'espace $\mathcal P(E )$ des mesures de probabilité de Borel sur $E$ de la topologie faible ou encore appelée topologie de la convergence étroite. On notera $\mathcal C_b (E)$ l'ensemble des fonctions continues bornées sur $E$.
+
+\begin{defi}\hfill\\
+La topologie faible sur $\mathcal P(E )$  est la topologie la moins fine rendant continues les applications $$\disp \mu\in \mathcal P(E )  \longmapsto \int_{E}\Phi(x)d\mu(x)$$ telle que $\Phi\in C_b (E)$.
+\end{defi}
+
+\begin{defi}\hfill\\
+Une suite $(\mu_n)_{n\in \N}$ de mesures de probabilité converge vers $\mu$ pour la topologie de la convergence étroite si
+
+	$$\int_{E}\Phi(x) d\mu_n(x)  \underset{n\to +\infty}{\longrightarrow} \int_{E}\Phi(x) d\mu(x)$$
+	
+\noindent pour toute $\Phi\in C_b (E)$.
+\end{defi}
+
+\begin{prop}\textbf{(Admis.)} \\
+	Pour toutes mesures de probabilité $\mu, \nu \in \mathcal P(E )$, l'espace des couplages entre $\mu$ et $\nu$ noté $\Pi(\mu,\nu)$ est un compact de $\mathcal P(E\times E)$ muni de la topologie faible. 
+
+\end{prop}
+
+\begin{thm}\textit{"Existence d'un couplage optimal"}\\
+	Soit $c : E \times E \to [0, +\infty]$ une fonction de coût $sci$. Pour toutes mesures de probabilité $\mu, \nu \in \mathcal P(E )$, il existe $\pi^*\in\Pi(\mu,\nu)$ tel que
+	
+	$$I_c (\pi^*) = \iint_{E \ E }
+	c(x, y) \pi^*(dxdy) = T_c (\mu, \nu) = \text{inf }\big\{I_c (\pi) \ : \ \pi \in \Pi(\mu, \nu) \big\}$$
+	\begin{proof}\hfill\\
+		$\bullet$ Montrons que la fonction $I_c$ est $sci$ sur $\mathcal P(E\times E)$:\\
+		
+		\noindent La fonction $c$ est positive donc minorée et $sci$. Ainsi d'après le point 2 de la Proposition 5, il existe une suite de fonctions $(c_n)$ continues positive et bornées telle que $c = \sup\limits_{n\in\N}c_n$. Par le théorème de convergence
+		monotone, pour tout $\pi\in\Pi(\mu,\nu)$
+		
+		$$I_c(\pi) = \int_{E\times E}c(x,y)\pi(dxdy) = \int_{E\times E} \sup c_n(x,y)\pi(dxdy) =\sup\int_{E\times E} c_n(x,y)\pi(dxdy) = \sup I_{c_n}(\pi) $$
+		\noindent Comme $c_n$ est continue bornée, par
+		définition de la topologie de la convergence étroite sur $\mathcal P(E\times E)$, la fonction $I_{c_n}:\pi\mapsto I_{c_n}(\pi)$ est continue sur $P(E\times E)$. Donc elle est $sci$ sur $P(E\times E)$ par la propriété 3. Enfin la fonction $I_c$ est elle-même $sci$ comme $sup$ de fonctions $sci$ par le point 1 de la propriété 5.\\
+		
+		\noindent $\bullet$ Montrons qu'il existe $\pi^*\in\Pi(\mu,\nu)$ tel que $I_c (\pi^*) = T_c (\mu, \nu)$. \\
+		
+		\noindent Par la propriété 6, $\Pi(\mu,\nu)$ est un compact de $\mathcal P(E\times E)$. Or l'application $I_c$ est $sci$ sur $P(E\times E)$, par la propriété 4, la fonction $I_c$ est minorée et atteint sa borne inférieure.
+		
+	\end{proof}
+\end{thm}
+\newpage 
+\subsection{Dualité de Kantorovich}
+\begin{thm}
+	\textit{"Dualité de Kantorovich"}\\
+	Soit $c : E \times E \to [0, +\infty[$ une fonction de coût $sci$. Pour toutes mesures de probabilité $\mu, \nu \in \mathcal P(E )$ telles que $T_c (\mu, \nu) < +\infty$. On a alors
+	$$T_c (\mu, \nu) = \sup\limits_{(\varphi,\psi)\in \Phi_b^2}\left\{\int_{E}\varphi(x)d\mu(x) + \int_{E}\psi(y)d\nu(y)\right\} $$
+	\noindent où $\Phi_b$ est l'ensemble des fonctions continues bornées telles que
+	$$\psi(x) + \varphi(y) \leq c(x, y), \quad \forall x, y \in E.$$
+	
+	\begin{proof}
+		$\bullet$ Montrons l'inégalité suivante :
+		$$ \sup\limits_{(\varphi,\psi)\in \Phi_b^2}\left\{\int_{E}\varphi(x)d\mu(x) + \int_{E}\psi(y)d\nu(y)\right\} \leq T_c (\mu, \nu)  $$
+		
+		\noindent Soit $\pi\in \Pi(\mu,\nu) $ et $\varphi, \psi \in \Phi_b^2 $ on a par hypothèse pour tout $(x, y )\in E^2$ 
+		$$\psi(x) + \varphi(y) \leq c(x, y)$$ 
+		\noindent Ainsi par croissance de l'intégrale on a 
+		
+		\begin{align*}
+		\int_{E\times E}c(x, y)\pi(dxdy) & \geq \int_{E\times E}(\psi(x) + \varphi(y))\pi(dxdy) \\
+		& =  \int_{E\times E}\psi(x) \pi(dxdy) + \int_{E\times E} \varphi(y)\pi(dxdy)\\
+		& =   \int_{E}\psi(x) \mu(dx) + \int_{E} \varphi(y)\nu(dy)
+		\end{align*}
+	\noindent Par passage à l'infimum sur $\Pi(\mu,\nu)$ on obtient 
+	
+			$$T_c (\mu, \nu) \geq \int_{E}\psi(x) \mu(dx) + \int_{E} \varphi(y)\nu(dy)$$
+	
+	\noindent Enfin, par passage au sup sur $\Pi(\mu,\nu)^2$ on obtient le résultat voulu
+	$$ \sup\limits_{(\varphi,\psi)\in \Phi_b^2}\left\{\int_{E}\varphi(x)d\mu(x) + \int_{E}\psi(y)d\nu(y)\right\} \leq T_c (\mu, \nu)  $$
+	
+	$\bullet$ L'inégalité suivante sera admise dans la suite de ce rapport:
+	$$ \sup\limits_{(\varphi,\psi)\in \Phi_b^2}\left\{\int_{E}\varphi(x)d\mu(x) + \int_{E}\psi(y)d\nu(y)\right\} \geq T_c (\mu, \nu)  $$
+	\end{proof}
+\end{thm}
+
+\begin{rmq}	
+	 La dualité de Kantorovitch nous permet de faire la connexion entre la formulation duale et la formulation primale dans des problèmes de transport optimal. En particulier, elle nous permet pour le LSAP (Linear Sum Assignment Problem, vu ultérieurement) d'appliquer l'algorithme hongrois pour obtenir la solution optimale.
+\end{rmq}
+\newpage
+\subsection{Distance de Wasserstein}
+
+\noindent Soit $(E,d)$ un espace métrique polonais avec une fonction de coût c supposée \emph{sci} sur $E\times E$. $T_c (\mu, \nu)$ est le coût de transport dit optimal nous permettant d'envoyer la mesure de probabilité $\mu$ sur la mesure de probabilité $\nu$. Nous aimerions pouvoir comparer des mesures de probabilité et ainsi dire si elle sont proches ou non dans l'espace $\mathcal P(E )$. Pour cela, il serait judicieux d'avoir une notion de distance sur l'espace $\mathcal P(E )$.\\
+
+\noindent Pour  $p \in [1, +\infty[$, notons
+$$T_p (\mu, \nu) = \text{inf }\left\{\int_{E\times E}d(x,y)^p d\pi(x,y) \ : \ \pi \in \Pi(\mu, \nu) \right\}$$
+
+\begin{defi}
+	Pour  $p \in [1, +\infty[$ on pose $\mathcal P_p(E )$ l'ensemble des mesures de probabilité qui admettent un moment d'ordre $p$.
+	
+	$$\mathcal P_p(E ) = \left\{ \mu \in \mathcal P(E ) : \exists x_0 \in E, \int_{E }d(x,x_0)^pd\mu(x) < +\infty \right\}$$
+\end{defi}
+
+\begin{rmq}
+	Le choix du point $x_0$ n'a pas d'importance dans le caractère fini de l'intégrale précédente, il s'agit de remarquer pour $x_1\in E$ que par l'inégalité triangulaire on a: $d(x_0,x) \leq d(x_0,x_1) + d(x_1,x)$. Ainsi par croissance de $(x\mapsto x^p)$ et croissance de l'intégrale on a: $$\int_{E }d(x,x_1)^pd\mu(x) \leq \int_{E }(d(x_0,x_1) + d(x_0,x))^pd\mu(x) \overset{(*)}{<} +\infty$$
+	
+	 \noindent $(*)$ On utilise l'inégalité de Minkowski pour la mesure de probabilité $\mu$ pour la majoration et le fait que $\mu$ est de masse finie (les constantes sont intégrables). 
+\end{rmq}
+
+\begin{prop-def}\textit{"Distance de Wasserstein"}\\
+	\noindent Pour tout couple $(\mu,\nu)\in \mathcal P_p(E )^2$, la quantité 
+	$$W_p(\mu,\nu) = T_p (\mu, \nu)^{\frac{1}{p}} $$
+	\noindent est appelée la distance de Wasserstein suivant la valeur $p$. L'application $$\begin{array}{cccl}W_p :& \mathcal P_p(E )^2&  \longrightarrow& \R^+\\
+	&(\mu,\nu)&\longmapsto&T_p (\mu, \nu)^{\frac{1}{p}}
+	\end{array}$$ 
+	\noindent est une distance sur $\mathcal P_p(E )$. 	 
+	\begin{proof}\hfill\\
+		Soit $\mu, \nu, \gamma \in \mathcal P_p(E )$\\
+		
+		\noindent $\bullet$ Montrons que $W_p$ vérifie la symétrique: \\
+		
+		$$W_p(\mu,\nu) = T_p (\mu, \nu)^{\frac{1}{p}} = T_p (\nu, \mu)^{\frac{1}{p}} = W_p(\nu,\mu)$$
+		
+		\noindent On utilise seulement la symétrie de la distance $d$. \newpage
+		
+		\noindent $\bullet$ Montrons que $W_p$ vérifie la séparation: \\
+		\begin{itemize}
+			\item Si $\mu=\nu$ alors $X=Y$ $\mathbb{P}$-p.s. ainsi pour tout couplage $\pi\in\Pi(\mu,\nu)$ on a $\disp\int_{E\times E}d(x,y)^p d\pi(x,y)=0$.\\
+			Donc $T_p (\mu, \nu)^{\frac{1}{p}} = 0 = W_p(\mu,\nu) $
+			\item Si $W_p(\mu,\nu)=0$, pour $\pi_1$ le couplage optimal associé à $T_p (\mu, \nu)$ on sait que $d(X,Y)^p=0$ $\pi_1$-p.s. et par le caractère séparable de $d$ on sait que  $X=Y$ $\pi_1$-p.s.
+			Pour toute fonction continue bornée $\Phi:E\to\R$ on a 
+			$$\mathbb E (\Phi(X)) = \int_{E }\Phi(x)d\mu(x) = \int_{E\times E }\Phi(x)d\pi_1(x,y)= \int_{E\times E }\Phi(y)d\pi_1(x,y) = \int_{E }\Phi(y)d\nu(y) = \mathbb E (\Phi(Y))$$
+			Ainsi $X$ et $Y$ ont la même loi donc $\mu=\nu$. 
+		\end{itemize}	
+		
+		\noindent $\bullet$ Montrons que $W_p$ vérifie l'inégalité triangulaire:\\
+		\begin{itemize}
+			\item Notons $X,Y,Z$ trois variables aléatoires définies sur un même espace probabilisé $\left(\Omega, \mathcal{B}, \mathbb{P}\right)$ à valeurs dans $E$ de loi respective $\mu,\nu$  $\gamma$.
+			\item Supposons que $(X,Z)$ et $(Y,Z)$ sont les couples optimaux en lien avec le problème de transport optimal. On peut leur associer respectivement les couplages $\pi_1$ et $\pi_2$. Soit $\pi\in\mathcal P(E\times E\times E)$ la loi du triplet $(X,Y,Z)$. On a ainsi 
+			$$\mathbb E_\pi (d(X,Z)^p)=\mathbb E_{\pi_1} (d(X,Z)^p) = T_p (\mu, \gamma)  \quad \text{ et } \quad \mathbb E_\pi (d(Y,Z)^p) =E_{\pi_2} (d(Y,Z)^p)= T_p (\nu, \gamma) $$
+		\end{itemize}
+	
+	\noindent Par inégalité triangulaire dans $(E , d)$, pour tout $\omega\in \Omega$
+	$$0 \leq d(X(\omega) , Y(\omega) )^p \leq  \big(d(X(\omega) , Z(\omega) ) + d(Y(\omega) , Z(\omega))\big)^p $$
+	\noindent Soit $U = d(X , Y ) , V = d(X , Z ) , W = d(Y , Z )$ des variables aléatoires sur $\left(\Omega, \mathcal{B}, \mathbb{P}\right)$ à valeurs dans $\R^+$.
+	\begin{align*}
+	W_p(\mu,\nu) = \mathbb{E}_\pi(U^p)^\frac{1}{p} &\leq  \mathbb{E}_\pi((V+W)^p)^\frac{1}{p}\\
+	&= \|V+W\|_{L^p(\pi)}\\
+	&\overset{(*)}{\leq} \|V\|_{L^p(\pi)} +\|W\|_{L^p(\pi)}\\
+	&= \mathbb{E}_\pi(V^p)^\frac{1}{p} +\mathbb{E}_\pi(W^p)^\frac{1}{p} = W_p(\mu,\gamma) +W_p(\gamma,\nu)
+	\end{align*}
+	
+	\noindent $(*)$ Nous utilisons l'inégalité triangulaire pour l'espace normé $\left(L^p(\pi), \|\cdot\|_{L^p(\pi)} \right)$
+		
+	\end{proof}
+\end{prop-def}
+
+\newpage
+
+\section{Algorithme Hongrois}
+
+\subsection{Problème}
+
+\noindent On rappelle le problème de transport optimal à résoudre.
+
+
+$$\left\{\begin{array}{l}
+\text{Minimiser :}  \quad \int\ c(x,y)\ d\pi(x,y)\\
+\text{Étant donné :}  \quad \text{les mesures } \mu, \nu \text{ et le coût } c\\
+\text{Sous la contrainte :}  \quad \pi \text{ a pour marginales } \mu \text{ et }\nu
+\end{array}\right.$$
+
+
+\noindent Pour résoudre le problème, il existe des algorithmes permettant de construire des solutions au problème simplifié (par discrétisation).
+\noindent On considère alors le problème où $\mu$ et $\nu$ sont des sommes finies de masses de Dirac.
+
+\subsubsection{Problème discret}
+
+\noindent Le problème discret se formule donc de la même façon avec $\mu$ et $\nu$ des mesures discrètes.
+$$\disp \mu = \sum_{i=1}^{n}\  p_i\ \delta_{a_i} \text{ et } \disp \nu = \sum_{i=1}^{m}\  q_i\ \delta_{b_i}$$
+
+\noindent Et tout couplage $\pi\in\Pi(\mu,\nu)$ est donc discret.
+\noindent Un plan de transport correspond à une matrice de taille $m\ \times\ n$.
+\noindent On le notera x=$(x_{i,j})_{i \in \llbracket1;n\rrbracket,j \in \llbracket1;m\rrbracket}$.
+
+$$\left\{\begin{array}{l}
+	\text{Minimiser :}  \quad \disp \sum_{ij}\  c_{i,j}\cdot x_{ij}\\
+	\text{Sous la contrainte :}  \quad \disp \forall i,\quad \sum_{j}\  x_{ij}=p_i \quad ; \quad \disp \forall j,\quad \sum_{i}\  x_{ij}=q_j\\
+	\text{et }  \quad \forall i,j\quad  x_{ij}\ge 0
+\end{array}\right.$$
+
+
+
+\begin{rmq}
+	\noindent $X$ est dit faisable s'il respecte les contraintes du problème (marginales).
+\end{rmq}
+\begin{rmq}
+	\noindent $X$ est dit optimal s'il minimise le coût total $\disp \sum_{ij}\  c_{i,j}\cdot x_{ij}$, ce minimum est appelé valeur du problème.
+\end{rmq}
+
+\subsubsection{Linear Sum Assignment Problem (LSAP)}
+\noindent Ce problème est un cas particulier du problème discret. Les mesures $\mu$ et $\nu$ ont le même nombre $N$ de points, et les $p_i$ et $q_i$ sont égaux à $\frac{1}{N}$.
+\noindent De plus, la solution a une contrainte supplémentaire : les $x_{ij}$ sont égaux à 0 ou 1.
+
+\begin{rmq}
+	Dans le Problème de LSAP, il existe une approche "duale" vue avec dans théorème 2, elle permet de faciliter la recherche de solutions.
+\end{rmq} 
+
+\newpage
+
+\subsection{Présentation de l'algorithme Hongrois}
+
+\noindent L'algorithme Hongrois permet de construire une assignation optimale pour le problème de LSAP relaché, et construit un couple solution du problème dual ($\phi$, $\psi$). Tout au long de l'algorithme on disposera :
+\begin{enumerate}[]\item d'un couple ($\phi$, $\psi$) faisable pour le problème dual, c'est-à-dire vérifiant $\phi(i) + \psi(j) \leq c_{ij}$
+\item d'une assignation partielle $x_{ij} \in \{0, 1\}$ vérifiant $ \sum_{i}\  x_{ij}\leq 1 \disp$ ,  $ \sum_{j}\  x_{ij}\leq 1 \disp$, et la lâcheté complémentaire : si $x_{ij}$ vaut 1 alors l'arête (i,j) est saturée. Autrement dit : seules les arêtes saturées peuvent être assignées. \end{enumerate}
+\noindent Le nombre de sites assignés est croissant pendant l'algorithme ; celui-ci finit quand tous les sites
+sont assignés.\par
+
+\subsubsection{Vue d'ensemble du fonctionnement de l'algorithme.}\par\par
+
+\textbf{Initialisation}\par
+\noindent On part de l'assignation vide x = 0 et de ($\phi$, $\psi$) identiquement nulle. On « augmente » d'abord $\phi$ et $\psi$ en deux étapes.\par
+
+\begin{enumerate}
+	\item Pour i de 1 à N on pose $\phi(i) = \underset{j}{min}(c_{ij})$ . C'est le $\phi$ le plus grand tel que le couple ($\phi$, $\psi$) reste faisable
+	\item Puis, pour j de 1 à N on pose $\psi(j) = \underset{i}{min}(c_{ij} - \phi(i))$. À $\phi$ fixé, c'est le $\psi$ le plus grand tel que ($\phi$, $\psi$) reste faisable
+\end{enumerate}\par
+
+Enfin, pour i entre 1 et N :\par
+\begin{enumerate}
+	\item S'il existe j non-assigné tel que l'arête (i, j) est saturée, on assigne i au premier j trouvé (on change $x_{ij}$ en 1) ;
+	\item Sinon i reste non-assigné.
+\end{enumerate}
+
+\textbf{Boucle principale}\par
+Pour chaque sommet non assigné :
+\begin{enumerate}
+	\item Chercher dans le graphe des arêtes saturées un chemin augmentant.
+	\item S'il y en a un, l'inverser.
+	\item S'il n'y en a pas, créer des arêtes saturées en modifiant ($\phi$, $\psi$), et revenir au 1. C'est la procédure d'ouverture d'arêtes saturées. Cette procédure peut ouvrir et fermer des arêtes saturées. (cela fait évoluer le graphe et on peut avancer dans l'algorithme)
+\end{enumerate}
+
+
+\subsubsection{Exemple}
+
+Dans l'exemple, la matrice de coûts est $$c=\begin{pmatrix}
+	1 & 4 & 2 \\
+	3 & 5 & 6 \\
+	2 & 1 & 5 \\
+\end{pmatrix}$$
+
+ 
+\newpage 
+
+\includegraphics*[scale=.85]{h1.png}
+\hfil\\[0.25cm]
+\includegraphics*[scale=.85]{h2.png}
+\hfil\\[0.25cm]
+\includegraphics*[scale=.85]{h3.png}
+\hfil\\[0.25cm]
+\includegraphics*[scale=.85]{h4.png}
+\hfil\\[0.25cm]
+\includegraphics*[scale=.85]{h5.png}
+\hfil\\[0.25cm]
+\includegraphics*[scale=.85]{h6.png}
+\hfil\\
+
+
+\subsection{Application à un problème dans le plan}
+
+\subsubsection{Problème}
+
+\noindent Nous avons choisi une première application pour illustrer l'application de l'algorithme Hongrois au problème du Linear Sum Assignment Problem.\\
+\noindent Le contexte est le suivant :
+\noindent nous avons 8 entrepôts/usines/fournisseurs situés dans différentes villes, qui doivent alimenter 8 magasins dans d'autres villes. Nous souhaitons assigner à chaque magasin un fournisseur de manière à ce que les coûts de transports soient les plus limités possibles. Dans notre problème, les coûts de transports entre un fournisseur et le client sont proportionnels au temps de trajet par voie terrestre pour les transporteurs. \newpage
+\noindent Le problème est similaire au problème des tas de sable de Monge, ainsi qu'à d'autres problèmes d'assignation au moindre coût.
+\noindent On place les villes du problème sur une carte, et les temps de trajets dans une matrice des coûts.\\[1cm]
+
+\hfil\\
+\begin{center}
+	\includegraphics*[scale=.8]{France.png}
+\end{center}
+
+\hfil\\
+\newpage 
+\par Sous python, nous avons entré les villes et la matrice des coûts pour paramétrer le problème.
+
+\begin{lstlisting}
+# Les donnees du probleme.
+import numpy as np
+stor={0:'Lannion',1:'Le Havre',2:'Caen',3:'Lille',4:'Orleans', 5:'Besancon',6:'Lyon',7:'Poitiers'}
+dest={0:'Paris Nord',1:'Paris Sud',2:'Strasbourg',3:'Nantes',4:'Bordeaux', 5:'Toulouse',6:'Montpellier',7:'Marseille'}
+# matrice des couts
+c=np.array([[4.75,4.5,8.5,2.68,5.5,7.5,9.25,10.33],
+[2.125,2.125,5.99,3.65,5.9,7.6,8.16,8.42],
+[2.16,2.13,6.17,2.71,5.2,7.1,7.85,8.5],
+[1.9,2.13,4.68,5.28,7.33,7.96,8.4,8.46],
+[1.6,1.31,5.18,3.05,4.03,4.83,5.41,6.58],
+[3.68,3.42,2.38,6.28,6.63,6.16,4.83,4.86],
+[4.11,3.83,4.28,6.11,4.85,4.7,2.78,2.82],
+[3.35,3.08,7.13,2.,2.28,4.18,6.38,7.78]])
+\end{lstlisting}
+
+\subsubsection{Méthode de Résolution : Approche par graphe}
+
+\noindent Nous avons utilisé 2 méthodes différentes pour appliquer l'algorithme Hongrois dans Python. La première est celle que nous détaillons dans cette partie. Nous utilisons le module networkx de python. Cette méthode est intéressante pour représenter le problème de LSAP avec des graphes.
+Nous utilisons la méthode minimum\_weight\_full\_matching du module networkx, pour obtenir une solution au problème LSAP.\\[0.5cm]
+
+
+\begin{lstlisting}
+import networkx as nx
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# On cree un graphe
+G = nx.Graph()
+
+ls=list(stor.values())
+ld=list(dest.values())
+
+# On cree les noeuds du Graphe
+G.add_nodes_from(ls, bipartite=0)
+G.add_nodes_from(ld, bipartite=1)
+
+costs=[(stor[i],dest[j],c[i,j]) for j in range(c.shape[0]) for i in range(c.shape[0])]
+
+# On cree les arretes du graphe (avec les poids egaux au cout)
+G.add_weighted_edges_from(costs)
+
+# On obtient la solution au probleme LSAP par l'algorithme hongrois.
+matching = nx.bipartite.minimum_weight_full_matching(G, top_nodes=ls)
+
+# On cree un nouveau graphe d'assignation pour afficher la solution
+assignment_graph = nx.Graph()
+for a, b in matching.items():
+assignment_graph.add_edge(a, b, weight=G[a][b]['weight'])
+
+# Affichage du resultat
+pos = nx.bipartite_layout(assignment_graph, ls)
+nx.draw(assignment_graph, pos=pos, with_labels=True)
+edge_labels = nx.get_edge_attributes(assignment_graph, 'weight')
+nx.draw_networkx_edge_labels(assignment_graph, pos=pos, edge_labels=edge_labels)
+plt.show()
+
+# On affiche le cout total
+sum(edge_labels.values())
+\end{lstlisting}
+
+
+
+\noindent On obtient le graphe solution suivant, pour un coût total de 26.365 (Heures des trajets combinées) :
+
+
+
+\begin{figure}[!h]
+	\raggedright
+	\includegraphics*[scale=1.6]{G1.png}
+\end{figure}
+
+\hfil\\
+\newpage 
+\par Nous avons représenté la solution au problème sur la carte.
+
+\hfil\\
+\includegraphics*[scale=.750]{France1.png}
+\hfil\\
+
+\subsubsection{Méthode de Résolution : Autre version de l'algorithme Hongrois}
+
+\noindent La deuxième méthode pour appliquer l'algorithme hongrois que nous avons testé, utilise le module Munkres. Ce module contient des méthodes utilisant l'algorithme Hongrois.
+\begin{rmq}
+	Notons que Munkres fait référence à James Raymond Munkres, mathématicien américain ayant contribué (entre autres choses) au développement de l'algorithme Hongrois. D'ailleurs, l'algorithme Hongrois est aussi appelé algorithme de Kuhn-Munkres.
+\end{rmq}
+
+\newpage 
+\noindent Nous utilisons la méthode compute du module Munkres, pour obtenir une solution au problème LSAP.
+
+\begin{lstlisting}
+import copy
+import networkx as nx
+import matplotlib.pyplot as plt
+from munkres import Munkres
+%matplotlib inline
+
+# On recree la matrice des couts adaptee au module
+c1=[[4.75,4.5,8.5,2.68,5.5,7.5,9.25,10.33],
+[2.125,2.125,5.99,3.65,5.9,7.6,8.16,8.42],
+[2.16,2.13,6.17,2.71,5.2,7.1,7.85,8.5],
+[1.9,2.13,4.68,5.28,7.33,7.96,8.4,8.46],
+[1.6,1.31,5.18,3.05,4.03,4.83,5.41,6.58],
+[3.68,3.42,2.38,6.28,6.63,6.16,4.83,4.86],
+[4.11,3.83,4.28,6.11,4.85,4.7,2.78,2.82],
+[3.35,3.08,7.13,2.,2.28,4.18,6.38,7.78]]
+
+# Fonction de resolution utilisant Munkres, avec une matrice de couts en entree
+def solve_assignment(matrix):
+m = Munkres()
+
+# resort une liste de tuples (indice_ligne, indice_colonne) correspondants a l'assignation (solution du LSAP) issue #de l'algorithme hongrois
+indexes = m.compute(matrix)
+
+# calcul du cout total
+total_cost = sum(matrix[row][col] for row, col in indexes)
+
+# on met en forme le resultat dans une matrice d'assignation
+assignment_matrix = [[0] * len(matrix) for _ in range(len(matrix[0]))]
+for row, col in indexes:
+assignment_matrix[row][col] = 1
+
+return  indexes, assignment_matrix, total_cost
+
+# application a notre probleme
+index, assignment, cost = solve_assignment(c1)
+
+print(index)
+print("Assignment Matrix:")
+for row in assignment:
+print(row)
+print("Total Cost:", cost)
+
+# [(0, 3), (1, 0), (2, 1), (3, 2), (4, 5), (5, 7), (6, 6), (7, 4)]
+# Assignment Matrix:[
+#    [0, 0, 0, 1, 0, 0, 0, 0]
+#    [1, 0, 0, 0, 0, 0, 0, 0]
+#    [0, 1, 0, 0, 0, 0, 0, 0]
+#    [0, 0, 1, 0, 0, 0, 0, 0]
+#    [0, 0, 0, 0, 0, 1, 0, 0]
+#    [0, 0, 0, 0, 0, 0, 0, 1]
+#    [0, 0, 0, 0, 0, 0, 1, 0]
+#    [0, 0, 0, 0, 1, 0, 0, 0]]
+#Total Cost: 26.365000000000002
+\end{lstlisting}
+
+\noindent En affichant le résultat dans un graphe, on remarque que c'est bien la même solution (ordre d'affichage différent) pour le même coût :\\[1cm]
+\hfil\\
+\includegraphics*[scale=1.5]{G2.png}
+\hfil\\
+\newpage
+\section{Applications}
+\noindent Dans les deux premières parties de cette section, nous allons présenter quelques applications de transport optimal à l'aide du module python 'POT' dont nous donnons les informations ci-dessous.\\  
+
+\begin{lstlisting}
+@article{flamary2021pot,
+author  = {Rémi Flamary and Nicolas Courty and Alexandre Gramfort and Mokhtar Z. Alaya and Aurélie Boisbunon and Stanislas Chambon and Laetitia Chapel and Adrien Corenflos and Kilian Fatras and Nemo Fournier and Léo Gautheron and Nathalie T.H. Gayraud and Hicham Janati and Alain Rakotomamonjy and Ievgen Redko and Antoine Rolet and Antony Schutz and Vivien Seguy and Danica J. Sutherland and Romain Tavenard and Alexander Tong and Titouan Vayer},
+title   = {POT: Python Optimal Transport},
+journal = {Journal of Machine Learning Research},
+year    = {2021},
+volume  = {22},
+number  = {78},
+pages   = {1-8},
+url     = {http://jmlr.org/papers/v22/20-451.html}
+}
+\end{lstlisting}
+   
+\subsection{Généralisation du problème de production et de stockage dans le plan}
+\noindent Nous avons vu précédemment un exemple de transport optimal entre deux mesures de Bernoulli. Nous allons généraliser cette approche avec un nombre $n$ de points au départ comme à l'arrivée. Les poids seront répartis selon une loi uniforme. 
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.5]{a6.png}
+	\caption{Exemple de couplage pour n=50}
+\end{figure*}
+\newpage 
+
+\noindent Afin de mieux comprendre les étapes de programmation à l'aide du module 'POT', nous allons choisir de travailler avec $n=5$. Dans un premier temps, nous devons placer de manière aléatoire $5$ points sources et $5$ points cibles dans le plan. Pour cela, il suffit de considérer deux suites de vecteurs Gaussiens indépendants $(X_n)_n$ et $(Y_n)_n$ tels que: 
+$$\forall i \in \N , \ X_i \sim \mathcal{N}\left(\begin{pmatrix}
+4\\4
+\end{pmatrix}, Id_2\right) \quad \text{et} \quad \ Y_i \sim \mathcal{N}\left(\begin{pmatrix}
+4\\4
+\end{pmatrix}, \begin{pmatrix}
+1&-0.8\\-0.8&1
+\end{pmatrix}\right)$$
+\begin{rmq}
+	Le choix des valeurs est arbitraire. 
+\end{rmq} 
+\noindent Considérerons les vecteurs $a$ et $b$ associés aux densités discrètes uniformes. À l'aide de $Xs$ et de $Xt$ nous pouvons placer les points dans le plan mais aussi, nous pouvons construire la matrice de coût $M$.   
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.5]{a1.png}
+\end{figure*}
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.5]{a2.png}
+	\caption{Préparation du problème de transport optimal}
+\end{figure*}
+
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.6]{a4.png}
+	\includegraphics*[scale= 0.5]{a3.png}
+	
+	\caption{Matrice de coût et visualisation}
+\end{figure*}
+\noindent Nous utilisons la fonction \emph{'emd'} du module 'POT' pour obtenir la matrice de couplage. Cette matrice est solution du problème de transport optimal pour les objets $a,b$ et $M$ fixés au préalable. L'explication de l'algorithme permetant de trouver cette matrice $G_0$ sera pas approfondi dans la suite du rapport. 
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.45]{a5.png}
+	\includegraphics*[scale= 0.45]{a7.png}
+	\caption{Couplage et associations dans le plan sous les contraintes du transport optimal}
+\end{figure*}
+
+\newpage
+
+\begin{rmq}
+	Certains axes supplémentaires sont développés en (Annexe 2):
+	\begin{itemize}
+		\item Nombre de points cibles et sources différent.
+		\item Densité de probablilité discrète mais non uniforme. 
+	\end{itemize}
+\end{rmq}
+
+\subsection{Transfert de couleurs entre deux images}
+\noindent Le transport optimal est né d'un problème d'ingénierie de Monge, il trouve des applications dans le monde réel comme nous allons le voir. Il peut être utilisé pour le traitement d'images, on peut modifier une image source pour que ses couleurs ressemblent à celles d'une image cible. Imaginons un artiste (peintre/plascticien) qui chercherait à reproduire un paysage, un portrait ou une scène de vie à l'aide de ses couleurs fétiches. \\[0.25cm]
+
+
+\begin{figure*}[!h]
+	\centering
+	\includegraphics*[scale= 0.35]{b0.jpg}
+	\caption{Couleurs fétiches}
+\end{figure*}
+
+\begin{ex} \textit{Un portait}\\
+	\begin{figure*}[!h]
+		\centering
+		\includegraphics*[scale= 0.45]{b12.png}
+	\end{figure*}
+
+	
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics*[scale= 0.8]{b11.png}\hfill\\[0.25cm]
+		\begin{minipage}{0.48\linewidth}
+				\raggedright
+				\includegraphics*[scale= 0.067]{b1.jpg}
+		\end{minipage}\hfill
+	\begin{minipage}{0.48\linewidth}
+			\raggedright
+			\includegraphics*[scale= 0.67]{b13.png}
+	\end{minipage}
+	\end{minipage}
+
+\end{ex}
+\newpage
+
+\begin{ex} \textit{Un paysage de Corse}\\
+	\begin{figure*}[!h]
+		\centering
+		\includegraphics*[scale= 0.19]{b3.jpg}\quad \quad
+		\includegraphics*[scale= 0.35]{b0.jpg}
+	
+		\includegraphics*[scale= 0.65]{b32.png}
+		
+		\includegraphics*[scale= 0.195]{b3.jpg}\quad \quad
+		\includegraphics*[scale= 0.43]{b34.png}
+	\end{figure*}
+	
+\end{ex}
+
+\newpage
+
+\begin{ex} \textit{Une scène de vie}\\
+	\begin{figure*}[!h]
+		\centering
+		\includegraphics*[scale= 0.55]{b41.png}\hfill\\[1cm]
+		
+		\includegraphics*[scale= 0.65]{b42.png}
+	\end{figure*}
+	
+\end{ex}
+
+
+
+\section*{Bibliographie:}
+
+\begin{itemize}
+	\item \href{https://perso.math.u-pem.fr/samson.paul-marie/pdf/coursM2transport.pdf}{Nathael Gozlan, Paul-Marie Samson, Pierre-André Zitt. Cours de Transport Optimal.}
+	\item \href{https://images.math.cnrs.fr/Le-transport-optimal-numerique-et-ses-applications-Partie-1.html}{Gabriel Peyré.	Article	d'introduction, Images des maths.}
+	\item \href{https://optimaltransport.github.io/}{Computational Optimal Transport}
+	\item \href{https://pythonot.github.io/quickstart.html}{Module POT: Python Optimal Transport}
+	\item \href{https://fr.wikipedia.org/wiki/Semi-continuit\%C3\%A9}{Wikipédia : semi-continuité }
+	\item \href{https://chat.openai.com/}{Openai pour des questions techniques sur python et en \LaTeX}
+\end{itemize}
+
+
+
+
+
+
+\end{document}
